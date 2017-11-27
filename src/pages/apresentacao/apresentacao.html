@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Slides</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="page-apresentacao">
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+        <img [src]="slide.image" class="slide-image"/>        
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+    <ion-slide>
+      <ion-toolbar>
+      </ion-toolbar>
+      <img src="/assets/imgs/fo.png" class="slide-image"/>
+      <h2 class="slide-title">Pronto!</h2>
+      <h5 class="slide-title">Para chamar um Dadi, clique no botão "Chamar dadi" depois de efetuar os cadastros.</h5>      
+      <button ion-button large clear icon-end color="primary" (click)="concluirSlide()">
+        Começar
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
